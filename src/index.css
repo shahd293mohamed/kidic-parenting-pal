@@ -7,8 +7,9 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
+:root {
+    /* KidCare Brand Colors - Soft, nurturing palette */
+    --background: 25 100% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -17,16 +18,21 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Gentle Blue from logo */
+    --primary: 214 80% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 90% 75%;
 
-    --secondary: 210 40% 96.1%;
+    /* Secondary - Soft Pink from logo */
+    --secondary: 330 60% 85%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    /* Muted - Warm cream tones */
+    --muted: 25 40% 95%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    /* Accent - Warm peach */
+    --accent: 15 80% 88%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +40,22 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 214 80% 65%;
+
+    /* Custom KidCare Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(214 80% 65%), hsl(214 90% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(330 60% 85%), hsl(15 80% 88%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 80% 65% / 0.9), hsl(330 60% 85% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(25 100% 98%), hsl(25 40% 95%));
+    
+    /* Shadows with brand colors */
+    --shadow-primary: 0 10px 30px -10px hsl(214 80% 65% / 0.3);
+    --shadow-secondary: 0 10px 30px -10px hsl(330 60% 85% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(214 80% 65% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -55,34 +76,46 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
+.dark {
+    /* Dark mode with softer tones for families */
+    --background: 222.2 20% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222.2 20% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222.2 20% 10%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 214 80% 70%;
+    --primary-foreground: 222.2 20% 8%;
+    --primary-glow: 214 90% 80%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 330 40% 75%;
+    --secondary-foreground: 222.2 20% 8%;
 
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 217.2 20% 15%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 15 60% 78%;
+    --accent-foreground: 222.2 20% 8%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217.2 20% 18%;
+    --input: 217.2 20% 18%;
+    --ring: 214 80% 70%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 80% 70%), hsl(214 90% 80%));
+    --gradient-secondary: linear-gradient(135deg, hsl(330 40% 75%), hsl(15 60% 78%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 80% 70% / 0.9), hsl(330 40% 75% / 0.9));
+    --gradient-subtle: linear-gradient(180deg, hsl(222.2 20% 8%), hsl(217.2 20% 12%));
+    
+    --shadow-primary: 0 10px 30px -10px hsl(214 80% 70% / 0.4);
+    --shadow-secondary: 0 10px 30px -10px hsl(330 40% 75% / 0.4);
+    --shadow-soft: 0 4px 20px -4px hsl(214 80% 70% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +134,23 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom utility classes for KidCare */
+  .hero-text {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+  
+  .feature-card {
+    @apply bg-card border border-border/50 rounded-2xl p-6 transition-all duration-300 hover:shadow-soft hover:-translate-y-1;
+  }
+  
+  .gentle-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .gentle-bounce:hover {
+    transform: translateY(-2px) scale(1.02);
   }
 }
