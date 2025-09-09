@@ -14,6 +14,9 @@ import Emergency from "./pages/Emergency";
 import Chatbot from "./pages/Chatbot";
 import Store from "./pages/Store";
 import NotFound from "./pages/NotFound";
+import Notifications from "./pages/Notifications";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +37,9 @@ const App = () => (
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

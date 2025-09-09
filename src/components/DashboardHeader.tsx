@@ -25,31 +25,59 @@ const DashboardHeader = () => {
             </h1>
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/dashboard" className="text-foreground hover:text-primary transition-smooth">
-              Dashboard
+          {/* Navigation - User Guidance Focused */}
+          <nav className="hidden md:flex items-center space-x-1">
+            <Link 
+              to="/dashboard" 
+              className="px-3 py-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+            >
+              🏠 Home
             </Link>
-            <Link to="/tracker" className="text-foreground hover:text-primary transition-smooth">
-              Tracker
+            <Link 
+              to="/tracker" 
+              className="px-3 py-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+            >
+              📊 Track Progress
             </Link>
-            <Link to="/educational-content" className="text-foreground hover:text-primary transition-smooth">
-              Education
+            <Link 
+              to="/educational-content" 
+              className="px-3 py-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+            >
+              📚 Learn & Play
             </Link>
-            <Link to="/doctors" className="text-foreground hover:text-primary transition-smooth">
-              Doctors
+            <Link 
+              to="/doctors" 
+              className="px-3 py-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+            >
+              👩‍⚕️ Find Doctors
             </Link>
-            <Link to="/store" className="text-foreground hover:text-primary transition-smooth">
-              Store
+            <Link 
+              to="/chatbot" 
+              className="px-3 py-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+            >
+              🤖 Ask AI
+            </Link>
+            <Link 
+              to="/store" 
+              className="px-3 py-2 rounded-lg text-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 font-medium"
+            >
+              🛒 Shop
             </Link>
           </nav>
 
           {/* Right Side */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
+            {/* Emergency Quick Access */}
+            <Link to="/emergency">
+              <Button variant="outline" size="sm" className="bg-red-50 border-red-200 text-red-700 hover:bg-red-100">
+                🚨 Emergency
+              </Button>
+            </Link>
+            
             <Link to="/notifications">
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="relative hover:bg-primary/10">
                 <Bell className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full text-xs"></span>
+                <span className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full text-xs animate-pulse"></span>
               </Button>
             </Link>
             
@@ -62,23 +90,39 @@ const DashboardHeader = () => {
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
+              <DropdownMenuContent align="end" className="w-56 p-2">
+                <div className="px-2 py-1.5 text-sm font-medium text-gray-900">
+                  Sarah Johnson
+                </div>
+                <div className="px-2 py-1 text-xs text-gray-500 mb-2">
+                  sarah.johnson@email.com
+                </div>
+                <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                  <Link to="/profile" className="flex items-center">
-                    <User className="mr-2 h-4 w-4" />
-                    Profile
+                  <Link to="/profile" className="flex items-center py-2">
+                    <User className="mr-3 h-4 w-4" />
+                    <div>
+                      <p className="font-medium">My Profile</p>
+                      <p className="text-xs text-gray-500">Manage family info</p>
+                    </div>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/settings" className="flex items-center">
-                    <Settings className="mr-2 h-4 w-4" />
-                    Settings
+                  <Link to="/settings" className="flex items-center py-2">
+                    <Settings className="mr-3 h-4 w-4" />
+                    <div>
+                      <p className="font-medium">Settings</p>
+                      <p className="text-xs text-gray-500">App preferences</p>
+                    </div>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-red-600">
-                  <LogOut className="mr-2 h-4 w-4" />
-                  Sign Out
+                <DropdownMenuItem className="text-red-600 py-2">
+                  <LogOut className="mr-3 h-4 w-4" />
+                  <div>
+                    <p className="font-medium">Sign Out</p>
+                    <p className="text-xs">Log out of your account</p>
+                  </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
