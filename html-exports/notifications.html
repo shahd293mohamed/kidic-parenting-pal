@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - KidCare</title>
+    <meta name="description" content="Stay updated with your child's care notifications including vaccination reminders, milestone achievements, and appointment confirmations.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gradient-to-br from-blue-50 via-white to-pink-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/kidcare-icon.jpg" alt="KidCare" class="w-10 h-10 rounded-full">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-pink-600 bg-clip-text text-transparent">KidCare</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="text-gray-600 hover:text-gray-900 transition-colors">📊 Dashboard</a>
+                    <a href="notifications.html" class="text-blue-600 font-medium">🔔 Notifications</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Notifications</h1>
+                <p class="text-gray-600">Stay updated with your child's care</p>
+            </div>
+            <div class="flex gap-3">
+                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    Mark All Read
+                </button>
+                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    Clear All
+                </button>
+            </div>
+        </div>
+
+        <!-- Notification Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="flex items-center">
+                    <div class="p-3 bg-blue-100 rounded-full">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-8a1 1 0 011-1h1a1 1 0 011 1v8z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900">2</p>
+                        <p class="text-gray-600">Unread</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="flex items-center">
+                    <div class="p-3 bg-red-100 rounded-full">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900">1</p>
+                        <p class="text-gray-600">High Priority</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <div class="flex items-center">
+                    <div class="p-3 bg-green-100 rounded-full">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-2xl font-bold text-gray-900">5</p>
+                        <p class="text-gray-600">Total Today</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications List -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+            <div class="p-6 border-b border-gray-200">
+                <h2 class="text-lg font-semibold flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-8a1 1 0 011-1h1a1 1 0 011 1v8z"></path>
+                    </svg>
+                    Recent Notifications
+                </h2>
+            </div>
+            <div class="divide-y divide-gray-100">
+                <!-- High Priority Notification -->
+                <div class="p-6 bg-blue-50 border-l-4 border-l-blue-500 hover:bg-gray-50 transition-colors">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 rounded-full bg-blue-100 text-blue-800">📅</div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <h3 class="font-semibold text-gray-900">Vaccination Reminder</h3>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                </div>
+                                <p class="text-gray-600 mb-2">Emma's MMR vaccine is due in 3 days</p>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">vaccine</span>
+                                    <span class="text-sm text-gray-500">2 hours ago</span>
+                                    <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">high priority</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button class="px-3 py-1 text-sm text-gray-600 hover:text-gray-800">Mark Read</button>
+                            <button class="text-gray-400 hover:text-gray-600">×</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Notification -->
+                <div class="p-6 hover:bg-gray-50 transition-colors">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-2 rounded-full bg-green-100 text-green-800">❤️</div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-700">Milestone Achievement</h3>
+                                <p class="text-gray-600 mb-2">Great job! You logged Emma's first steps</p>
+                                <div class="flex items-center gap-3">
+                                    <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">milestone</span>
+                                    <span class="text-sm text-gray-500">1 day ago</span>
+                                    <span class="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded">medium priority</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="text-gray-400 hover:text-gray-600">×</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

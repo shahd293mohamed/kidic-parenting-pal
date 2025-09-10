@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Store - KidCare</title>
+    <meta name="description" content="Age-appropriate products curated for your child's development. Shop toys, books, feeding supplies, safety items, and clothing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gradient-to-br from-blue-50 via-white to-pink-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/kidcare-icon.jpg" alt="KidCare" class="w-10 h-10 rounded-full">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-pink-600 bg-clip-text text-transparent">KidCare</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="text-gray-600 hover:text-gray-900 transition-colors">📊 Dashboard</a>
+                    <a href="store.html" class="text-blue-600 font-medium">🛍️ Shop</a>
+                </nav>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 7H5l-2-4H1m0 0l2 13h16"></path>
+                    </svg>
+                    Cart (0)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Smart Store</h1>
+                <p class="text-gray-600">Age-appropriate products curated for your child's development</p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white p-6 rounded-lg border border-gray-200 mb-8">
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="relative">
+                    <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" placeholder="Search products..." class="pl-10 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                </div>
+                <select class="px-4 py-2 border border-gray-300 rounded-lg">
+                    <option>All Categories</option>
+                    <option>Toys & Games</option>
+                    <option>Books</option>
+                    <option>Feeding</option>
+                </select>
+                <select class="px-4 py-2 border border-gray-300 rounded-lg">
+                    <option>All Ages</option>
+                    <option>0-6 months</option>
+                    <option>6-12 months</option>
+                    <option>1-2 years</option>
+                </select>
+                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">More Filters</button>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Product Card -->
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div class="p-6">
+                    <div class="relative mb-4">
+                        <span class="absolute top-2 left-2 px-2 py-1 bg-gradient-to-r from-blue-600 to-pink-600 text-white text-xs rounded">Recommended</span>
+                        <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+                            <div class="text-4xl">🧸</div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold leading-tight mb-1">Montessori Wooden Stacking Rings</h3>
+                                <p class="text-gray-600 text-sm">Natural wooden stacking toy that helps develop hand-eye coordination</p>
+                            </div>
+                            <button class="ml-2 p-1 text-gray-400 hover:text-red-500">♡</button>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-yellow-500">⭐</span>
+                                <span class="text-sm text-gray-600">4.8 (127)</span>
+                            </div>
+                            <span class="px-2 py-1 bg-gray-100 border border-gray-200 rounded text-xs">6-12 months</span>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xl font-bold text-blue-600">$24.99</span>
+                            <span class="text-sm text-gray-500 line-through">$29.99</span>
+                        </div>
+
+                        <div class="flex items-center space-x-2">
+                            <button class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                <svg class="h-4 w-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 7H5l-2-4H1m0 0l2 13h16"></path>
+                                </svg>
+                                Add to Cart
+                            </button>
+                            <button class="p-2 border border-gray-300 rounded-lg hover:bg-gray-50">👁️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More product cards would go here -->
+        </div>
+
+        <!-- Personalized Recommendations -->
+        <div class="bg-gradient-to-r from-blue-50 to-pink-50 rounded-lg border border-gray-200 p-6">
+            <div class="mb-4">
+                <h2 class="text-lg font-semibold flex items-center gap-2 mb-2">
+                    <span class="text-yellow-500">⭐</span>
+                    Personalized for Emma (2 years 3 months)
+                </h2>
+                <p class="text-gray-600">Based on your child's age and development stage, we recommend these products</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-4 bg-white rounded-lg border">
+                    <h4 class="font-medium mb-2">Learning Shapes Puzzle</h4>
+                    <p class="text-sm text-gray-600 mb-2">Wooden shape sorter that teaches colors and problem-solving</p>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-blue-600">$16.99</span>
+                        <button class="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
