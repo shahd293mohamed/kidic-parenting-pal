@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - KidCare</title>
+    <meta name="description" content="Customize your KidCare experience with personal preferences, notification settings, privacy controls, and account security options.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-gradient-to-br from-blue-50 via-white to-pink-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/kidcare-icon.jpg" alt="KidCare" class="w-10 h-10 rounded-full">
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-pink-600 bg-clip-text text-transparent">KidCare</h1>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="text-gray-600 hover:text-gray-900 transition-colors">📊 Dashboard</a>
+                    <a href="tracker.html" class="text-gray-600 hover:text-gray-900 transition-colors">📈 Track Progress</a>
+                    <a href="educational.html" class="text-gray-600 hover:text-gray-900 transition-colors">🎓 Learn & Play</a>
+                    <a href="doctors.html" class="text-gray-600 hover:text-gray-900 transition-colors">👨‍⚕️ Find Doctors</a>
+                    <a href="chatbot.html" class="text-gray-600 hover:text-gray-900 transition-colors">🤖 Ask AI</a>
+                    <a href="store.html" class="text-gray-600 hover:text-gray-900 transition-colors">🛍️ Shop</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="emergency.html" class="btn btn-destructive btn-sm">🚨 Emergency</a>
+                    <a href="notifications.html" class="relative p-2 text-gray-600 hover:text-gray-900">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-8a1 1 0 011-1h1a1 1 0 011 1v8z"></path>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                    </a>
+                    <div class="relative">
+                        <img src="assets/kidcare-icon.jpg" alt="Profile" class="w-8 h-8 rounded-full cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Settings</h1>
+                <p class="text-gray-600">Customize your KidCare experience</p>
+            </div>
+            <button class="btn btn-outline">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Export Data
+            </button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="space-y-6">
+            <div class="tabs-list grid w-full grid-cols-4">
+                <button class="tabs-trigger" data-state="active" onclick="showTab('general')">General</button>
+                <button class="tabs-trigger" onclick="showTab('notifications')">Notifications</button>
+                <button class="tabs-trigger" onclick="showTab('privacy')">Privacy</button>
+                <button class="tabs-trigger" onclick="showTab('account')">Account</button>
+            </div>
+
+            <!-- General Settings -->
+            <div id="general-tab" class="tabs-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- App Preferences -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                App Preferences
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="dark-mode">Dark Mode</label>
+                                    <p class="text-sm text-gray-600">Switch to dark theme</p>
+                                </div>
+                                <div class="switch" id="dark-mode" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="sound">Sound Effects</label>
+                                    <p class="text-sm text-gray-600">Play sounds for interactions</p>
+                                </div>
+                                <div class="switch" id="sound" data-state="checked" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <label class="label" for="language">Language</label>
+                                <select class="select" id="language">
+                                    <option value="en">English</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="fr">French</option>
+                                    <option value="ar">Arabic</option>
+                                </select>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <label class="label" for="timezone">Timezone</label>
+                                <select class="select" id="timezone">
+                                    <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                    <option value="UTC-6">Central Time (UTC-6)</option>
+                                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device & Sync -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                </svg>
+                                Device & Sync
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="auto-sync">Auto Sync</label>
+                                    <p class="text-sm text-gray-600">Sync data across devices</p>
+                                </div>
+                                <div class="switch" id="auto-sync" data-state="checked" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="offline-mode">Offline Mode</label>
+                                    <p class="text-sm text-gray-600">Access content without internet</p>
+                                </div>
+                                <div class="switch" id="offline-mode" data-state="checked" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="label text-sm font-medium">Connected Devices</label>
+                                <div class="mt-2 space-y-2">
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                            </svg>
+                                            <span class="text-sm">iPhone 14 Pro</span>
+                                        </div>
+                                        <span class="badge badge-secondary">Current</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                                            </svg>
+                                            <span class="text-sm">Chrome Browser</span>
+                                        </div>
+                                        <button class="btn btn-ghost btn-sm">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Settings -->
+            <div id="notifications-tab" class="tabs-content hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-8a1 1 0 011-1h1a1 1 0 011 1v8z"></path>
+                            </svg>
+                            Notification Preferences
+                        </h2>
+                    </div>
+                    <div class="card-content space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <h3 class="font-medium text-gray-900">Essential Notifications</h3>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="label" for="vaccines">Vaccination Reminders</label>
+                                        <p class="text-sm text-gray-600">Get notified about upcoming vaccines</p>
+                                    </div>
+                                    <div class="switch" id="vaccines" data-state="checked" onclick="toggleSwitch(this)">
+                                        <div class="switch-thumb"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="label" for="milestones">Milestone Tracking</label>
+                                        <p class="text-sm text-gray-600">Reminders to log development milestones</p>
+                                    </div>
+                                    <div class="switch" id="milestones" data-state="checked" onclick="toggleSwitch(this)">
+                                        <div class="switch-thumb"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="label" for="appointments">Appointment Reminders</label>
+                                        <p class="text-sm text-gray-600">Doctor appointment notifications</p>
+                                    </div>
+                                    <div class="switch" id="appointments" data-state="checked" onclick="toggleSwitch(this)">
+                                        <div class="switch-thumb"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="label" for="emergency">Emergency Alerts</label>
+                                        <p class="text-sm text-gray-600">Critical health and safety alerts</p>
+                                    </div>
+                                    <div class="switch" id="emergency" data-state="checked" onclick="toggleSwitch(this)">
+                                        <div class="switch-thumb"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h3 class="font-medium text-gray-900">Optional Notifications</h3>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="label" for="educational">Educational Content</label>
+                                        <p class="text-sm text-gray-600">New articles and activity suggestions</p>
+                                    </div>
+                                    <div class="switch" id="educational" onclick="toggleSwitch(this)">
+                                        <div class="switch-thumb"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <label class="label" for="marketing">Marketing Updates</label>
+                                        <p class="text-sm text-gray-600">Product updates and promotions</p>
+                                    </div>
+                                    <div class="switch" id="marketing" onclick="toggleSwitch(this)">
+                                        <div class="switch-thumb"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4 border-t">
+                            <h3 class="font-medium text-gray-900 mb-4">Notification Schedule</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="label" for="quiet-start">Quiet Hours Start</label>
+                                    <input class="input" id="quiet-start" type="time" value="22:00">
+                                </div>
+                                <div>
+                                    <label class="label" for="quiet-end">Quiet Hours End</label>
+                                    <input class="input" id="quiet-end" type="time" value="07:00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div id="privacy-tab" class="tabs-content hidden">
+                <div class="space-y-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                                Privacy Controls
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="profile-visible">Profile Visibility</label>
+                                    <p class="text-sm text-gray-600">Make your profile visible to other parents</p>
+                                </div>
+                                <div class="switch" id="profile-visible" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="share-data">Share Anonymous Data</label>
+                                    <p class="text-sm text-gray-600">Help improve our services with anonymous usage data</p>
+                                </div>
+                                <div class="switch" id="share-data" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label" for="analytics">Analytics Tracking</label>
+                                    <p class="text-sm text-gray-600">Allow us to track app usage for improvements</p>
+                                </div>
+                                <div class="switch" id="analytics" data-state="checked" onclick="toggleSwitch(this)">
+                                    <div class="switch-thumb"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                Data Management
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                                <div>
+                                    <h4 class="font-medium">Download Your Data</h4>
+                                    <p class="text-sm text-gray-600">Get a copy of all your data in JSON format</p>
+                                </div>
+                                <button class="btn btn-outline">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    Download
+                                </button>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                                <div>
+                                    <h4 class="font-medium">Data Portability</h4>
+                                    <p class="text-sm text-gray-600">Export your data to use with other services</p>
+                                </div>
+                                <button class="btn btn-outline">Export</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Settings -->
+            <div id="account-tab" class="tabs-content hidden">
+                <div class="space-y-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                                Security
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <div>
+                                <label class="label" for="current-password">Change Password</label>
+                                <div class="space-y-3 mt-2">
+                                    <input class="input" id="current-password" type="password" placeholder="Current password">
+                                    <input class="input" id="new-password" type="password" placeholder="New password">
+                                    <input class="input" id="confirm-password" type="password" placeholder="Confirm new password">
+                                    <button class="btn btn-default">Update Password</button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <label class="label">Two-Factor Authentication</label>
+                                    <p class="text-sm text-gray-600">Add an extra layer of security to your account</p>
+                                </div>
+                                <button class="btn btn-outline">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                                    </svg>
+                                    Enable 2FA
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7a3 3 0 01-3-3v-2a3 3 0 013-3h10a3 3 0 013 3v2zM8 9a3 3 0 116 0 3 3 0 01-6 0zM14 9a3 3 0 116 0 3 3 0 01-6 0z"></path>
+                                </svg>
+                                Family Settings
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="p-4 bg-gray-50 rounded-lg">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-medium">Family Code</h4>
+                                    <span class="badge badge-secondary">FAM123456</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-3">Share this code with family members to join your account</p>
+                                <button class="btn btn-outline btn-sm">Generate New Code</button>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-3">Connected Family Members</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div class="flex items-center">
+                                            <div class="avatar w-8 h-8 mr-3">
+                                                <div class="avatar-fallback">SJ</div>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium text-sm">Sarah Johnson</p>
+                                                <p class="text-xs text-gray-600">Family Admin</p>
+                                            </div>
+                                        </div>
+                                        <span class="badge badge-default">You</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                        <div class="flex items-center">
+                                            <div class="avatar w-8 h-8 mr-3">
+                                                <div class="avatar-fallback">MJ</div>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium text-sm">Michael Johnson</p>
+                                                <p class="text-xs text-gray-600">Parent</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-ghost btn-sm">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Danger Zone -->
+                    <div class="card border-red-200">
+                        <div class="card-header">
+                            <h2 class="card-title flex items-center text-red-600">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                </svg>
+                                Danger Zone
+                            </h2>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-red-50 rounded-lg border border-red-200">
+                                <div>
+                                    <h4 class="font-medium text-red-800">Sign out from all devices</h4>
+                                    <p class="text-sm text-red-600">This will sign you out from all connected devices</p>
+                                </div>
+                                <button class="btn btn-outline text-red-600 border-red-300 hover:bg-red-50">Sign Out All</button>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-red-50 rounded-lg border border-red-200">
+                                <div>
+                                    <h4 class="font-medium text-red-800">Delete Account</h4>
+                                    <p class="text-sm text-red-600">Permanently delete your account and all data</p>
+                                </div>
+                                <button class="btn btn-destructive">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            document.getElementById('general-tab').classList.add('hidden');
+            document.getElementById('notifications-tab').classList.add('hidden');
+            document.getElementById('privacy-tab').classList.add('hidden');
+            document.getElementById('account-tab').classList.add('hidden');
+            
+            // Remove active state from all triggers
+            document.querySelectorAll('.tabs-trigger').forEach(trigger => {
+                trigger.removeAttribute('data-state');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.remove('hidden');
+            
+            // Set active state on clicked trigger
+            event.target.setAttribute('data-state', 'active');
+        }
+
+        function toggleSwitch(element) {
+            if (element.getAttribute('data-state') === 'checked') {
+                element.removeAttribute('data-state');
+            } else {
+                element.setAttribute('data-state', 'checked');
+            }
+        }
+    </script>
+</body>
+</html>
